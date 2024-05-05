@@ -1,0 +1,18 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /likes/{id} {
+      allow read, update, delete: if false;
+      allow create: if "createdAt" in request.resource.data &&
+        request.resource.data.createdAt is timestamp &&
+        "url" in request.resource.data &&
+        request.resource.data.url is string &&
+        request.resource.data.url.matches("^https://example\\.com.*$");
+    }
+    match /summary/{id} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}

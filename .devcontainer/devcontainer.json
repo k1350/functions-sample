@@ -1,0 +1,7 @@
+{
+  "name": "firebase",
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+  "forwardPorts": [5001, 8080, 9005]
+}
