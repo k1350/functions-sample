@@ -5,20 +5,16 @@
     "build": "tsc --project tsconfig.build.json",
     "lint": "biome check --apply .",
     "vitest:firestore": "vitest run --project firestore",
-    "test:firestore": "firebase emulators:exec --only firestore 'npm run vitest:firestore'",
-    "vitest:functions": "vitest run --project functions",
-    "test:functions": "firebase emulators:exec --only firestore 'npm run vitest:functions'"
+    "test:firestore": "firebase emulators:exec --only firestore 'npm run vitest:firestore'"
   },
   "main": "functions/lib/index.js",
   "dependencies": {
     "firebase": "^11.0.1",
-    "firebase-admin": "^12.7.0",
-    "firebase-functions": "^6.1.1"
+    "firebase-admin": "^12.7.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@firebase/rules-unit-testing": "^4.0.1",
-    "firebase-functions-test": "^3.3.0",
     "typescript": "^5.7.2",
     "vitest": "^2.1.5"
   },
